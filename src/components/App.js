@@ -1,8 +1,14 @@
 import NavBar from "./NavBar";
+import ItemListContainer from "./ItemListContainer";
+
 function App() {
     return (
         <>
             <NavBar/>
+            <ItemListContainer
+                alimento="Royal canig"
+                precio="5623"
+            />
         </>
     )   
 }
