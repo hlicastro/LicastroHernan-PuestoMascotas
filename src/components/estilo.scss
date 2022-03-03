@@ -1,0 +1,23 @@
+.elemento{
+    border: 1px solid black;
+    border-radius: 12px;
+    margin: 10px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+
+    align-content:space-around
+    
+}
+.controArticulos{
+    display: flex;
+    width: 290px;
+    justify-content:space-evenly;
+    margin-bottom: 5%;
+    margin-top: 5%;
+
+    
+}

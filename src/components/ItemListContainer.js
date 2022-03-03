@@ -1,9 +1,14 @@
+import ItemCount from "./ItemCount";
+
+
 function ItemListContainer(props) {
+    const miOnAdd=()=>{}
     return (
         <>
-            <p> 
-                {props.alimento} con un precio de $ {props.precio}
-            </p> 
+            <div className="elemento"> 
+                <p>{props.alimento} con un precio de $ {props.precio}</p> 
+                <ItemCount stock={5} inicial={1} onAdd={miOnAdd} />
+            </div>
         </>
     )   
 }
