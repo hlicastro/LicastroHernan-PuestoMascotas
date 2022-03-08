@@ -6,10 +6,7 @@ function App() {
     return (
         <>
             <NavBar/>
-            <ItemListContainer
-                alimento="Royal canig"
-                precio="5623"
-            />
+            <ItemListContainer/>
         </>
     )   
 }

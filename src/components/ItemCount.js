@@ -1,6 +1,5 @@
 import {useState} from "react"
 
-
 function ItemCount(props) {
     const [contador, setContador] = useState(props.inicial)
     const agregarItem = ()=> {
