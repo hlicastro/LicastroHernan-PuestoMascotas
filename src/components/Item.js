@@ -1,10 +1,12 @@
 function Item(props) {
     const itemCardCreate=()=>{}
-    console.log(props)
-
     return (
             <div className="elemento"> 
-                <p>{props.item.marca} con un precio de $ {props.item.precio}</p> 
+                <h3>{props.item.marca}</h3>
+                <h4>{props.item.producto}</h4>
+                <img className="elemento__img" src={props.item.img}/>
+                <h5>Con un precio de $ {props.item.precio}</h5>
+                <button>Agregar</button>
             </div>
         
     )   
