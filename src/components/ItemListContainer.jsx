@@ -9,8 +9,10 @@ let productosIniciales = [
         tipo: "perro",
         peso: 3,
         precio: 2800,
-        img: "./img/Royal canin mini adulto.jpg"
-    },
+        img: "./img/Royal canin mini adulto.jpg",
+        stock: 5,
+        inicial: 1
+        },
     {
         id: 2,
         marca: "Royal Canin ",
@@ -18,7 +20,9 @@ let productosIniciales = [
         tipo: "perro",
         peso: 15,
         precio: 7500,
-        img: "./img/Royal canin maxi adulto.jpg"
+        img: "./img/Royal canin maxi adulto.jpg",
+        stock: 6,
+        inicial: 1
     },
     {
         id: 3,
@@ -27,7 +31,9 @@ let productosIniciales = [
         tipo: "gato",
         peso: 7.5,
         precio: 6900,
-        img: "./img/Royal canin gato 7+.png"
+        img: "./img/Royal canin gato 7+.png",
+        stock: 3,
+        inicial: 1
     },
     {
         id: 4,
@@ -36,7 +42,9 @@ let productosIniciales = [
         tipo: "perro",
         peso: 12,
         precio: 9600,
-        img: "./img/Royal canin puppy.webp"
+        img: "./img/Royal canin puppy.webp",
+        stock: 8,
+        inicial: 1
     },
 ]
 function ItemListContainer(props) {

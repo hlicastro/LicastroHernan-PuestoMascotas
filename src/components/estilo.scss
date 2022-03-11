@@ -11,7 +11,7 @@
 
 
     }
-   
+
 }
 .controArticulos{
     display: flex;
@@ -28,4 +28,14 @@
     flex-wrap: wrap;
     
 
+}
+.elementoDetalle{
+    border:solid 2px black;
+    margin: 1rem;
+    padding: 10px;
+    &__img{
+        height: 200px;
+
+
+    }
 }
