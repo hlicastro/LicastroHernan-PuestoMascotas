@@ -26,7 +26,7 @@ function ItemDetailContainer(props) {
             setLoading(false)
         })
     },[id])
-
+    
 
     return (
         <main>

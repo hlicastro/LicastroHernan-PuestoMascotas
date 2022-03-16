@@ -12,6 +12,8 @@ function ItemCount(props) {
     }}
     const restaurar = ()=> {
         setContador(props.inicial)
+        props.onAdd(contador)
+
     }
     return (
         <>
@@ -20,7 +22,7 @@ function ItemCount(props) {
                 <p> {contador}</p> 
                 <button onClick={agregarItem}> +</button> 
             </div>
-            <button onClick={restaurar}> Agregar al carrito</button> 
+            <button onClick={restaurar}> Agregar </button> 
             
         </>
     )   
