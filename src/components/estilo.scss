@@ -13,6 +13,15 @@
     }
 
 }
+.linkNav a{
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+    &.active{
+        color: grey;
+    }
+}
+
 .controArticulos{
     display: flex;
     width: 290px;

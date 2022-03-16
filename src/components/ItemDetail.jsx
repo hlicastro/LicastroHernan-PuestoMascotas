@@ -2,7 +2,6 @@
 function ItemDetail(props) {
     const itemDetailCard=()=>{}
     return (
-        console.log(props.item),
             <div className="elementoDetalle"> 
                 <h3>{props.item.marca}</h3>
                 <h4>{props.item.producto}</h4>

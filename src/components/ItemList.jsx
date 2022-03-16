@@ -4,9 +4,9 @@ function ItemList(props) {
     const itemListCreate=()=>{}
     return (
         <div className="baseCarrito"> 
-            {
+            {   
                 props.items.map((item)=>{
-                    return <Item item={item}/>
+                    return  <Item item={item}/>   
                 })
             }
         </div>

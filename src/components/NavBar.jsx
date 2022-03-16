@@ -1,26 +1,21 @@
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidget from "./CartWidget";
-
+import { NavLink,Link  } from "react-router-dom"
 const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Puesto Mascotas</Navbar.Brand>
+        <Link to="/">Puesto Mascotas</Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">Carritos</Nav.Link>
-            <NavDropdown title="Secciones" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Articulos</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Consejos</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#deets">Contacto</Nav.Link>
+          <Nav className="me-auto linkNav">
+            <NavLink to="/category/perro">Perros</NavLink>
+            <NavLink to="/category/gato">Gatos</NavLink>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="#memes">
+            <Link eventKey={2} to="/carrito">
               <CartWidget/>
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

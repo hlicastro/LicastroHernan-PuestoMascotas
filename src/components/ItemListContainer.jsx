@@ -1,80 +1,40 @@
 import ItemList from "./ItemList";
 import {useState,useEffect} from "react";
+import {useParams}  from "react-router-dom"
+import { toast } from 'react-toastify'
 
-let productosIniciales = [
-    {
-        id: 1,
-        marca: "Royal Canin ",
-        producto: "Mini Adulto",
-        tipo: "perro",
-        peso: 3,
-        precio: 2800,
-        img: "./img/Royal canin mini adulto.jpg",
-        stock: 5,
-        inicial: 1
-        },
-    {
-        id: 2,
-        marca: "Royal Canin ",
-        producto: "Maxi adulto",
-        tipo: "perro",
-        peso: 15,
-        precio: 7500,
-        img: "./img/Royal canin maxi adulto.jpg",
-        stock: 6,
-        inicial: 1
-    },
-    {
-        id: 3,
-        marca: "Royal Canin ",
-        producto: "Gato Adulto",
-        tipo: "gato",
-        peso: 7.5,
-        precio: 6900,
-        img: "./img/Royal canin gato 7+.png",
-        stock: 3,
-        inicial: 1
-    },
-    {
-        id: 4,
-        marca: "Royal Canin ",
-        producto: "Maxi cachorro",
-        tipo: "perro",
-        peso: 12,
-        precio: 9600,
-        img: "./img/Royal canin puppy.webp",
-        stock: 8,
-        inicial: 1
-    },
-]
 function ItemListContainer(props) {
     
     const [cargando, setLoading] = useState(true)
     const [items, setProductos] = useState([])
-
-    useEffect(()=>{
-        const promesa = new Promise((res,rej)=>{
-            setTimeout(()=>{
-                res(productosIniciales)
-            },2000)
-        })
-        promesa
-        .then((CargaCorrecta)=>{
-            setProductos(productosIniciales)
-        })
-        .catch((CargaIncorrecta)=>{
-            console.log(CargaIncorrecta)
-        })
-        .finally(()=>{
-            setLoading(false)
-        })
-    })
-
+    const tipo=useParams()
+    useEffect(() => {
+        setTimeout(()=>{
+            const articulosIniciales = fetch('/articulos.json')
+            articulosIniciales
+                .then((res) => {
+                    return res.json() 
+                })
+                .then((datos) => {
+                    setProductos(datos)
+                    if (tipo.id== undefined) {
+                        setProductos(datos)
+                    } else {
+                        datos = datos.filter(e => e.tipo.includes(tipo.id))
+                        setProductos(datos)
+                    }                 
+                })
+                .catch(() => {toast.error('Error al acargar el carrito')})
+                .finally(() => { setLoading(false) })      
+        },1500)
+    },[tipo])
+    
+    
 
     return (
         <main>
-            {cargando ? <p>Aguarde un momento por favor estamos iniciando el carrito</p> : <ItemList items={items}/> }
+            {cargando ? <p>Aguarde un momento por favor estamos iniciando el carrito</p> : <ItemList items={items} tipo={tipo}/> }
         </main>
     );
-}
+    }
 export default ItemListContainer
