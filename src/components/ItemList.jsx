@@ -1,7 +1,6 @@
 import Item from "./Item";
 
 function ItemList(props) {
-    const itemListCreate=()=>{}
     return (
         <div className="baseCarrito"> 
             {   
