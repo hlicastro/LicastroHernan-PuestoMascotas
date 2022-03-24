@@ -11,9 +11,11 @@ const NavBar = () => {
           <Nav className="me-auto linkNav">
             <NavLink to="/category/perro">Perros</NavLink>
             <NavLink to="/category/gato">Gatos</NavLink>
+            <Link to="/carrito">Carrito</Link>
+
           </Nav>
           <Nav>
-            <Link eventKey={2} to="/carrito">
+            <Link to="/carrito">
               <CartWidget/>
             </Link>
           </Nav>
