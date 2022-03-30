@@ -1,40 +1,42 @@
 import ItemList from "./ItemList";
-import {useState,useEffect} from "react";
-import {useParams}  from "react-router-dom"
-import { toast } from 'react-toastify'
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import {db} from './Firebase'
+import { getDocs, collection , query , where } from "firebase/firestore"
 
 function ItemListContainer(props) {
-    
-    const [cargando, setLoading] = useState(true)
-    const [items, setProductos] = useState([])
-    const tipo=useParams()
-    useEffect(() => {
-        setTimeout(()=>{
-            const articulosIniciales = fetch('/articulos.json')
-            articulosIniciales
-                .then((res) => {
-                    return res.json() 
-                })
-                .then((datos) => {
-                    setProductos(datos)
-                    if (tipo.id== undefined) {
-                        setProductos(datos)
-                    } else {
-                        datos = datos.filter(e => e.tipo.includes(tipo.id))
-                        setProductos(datos)
-                    }                 
-                })
-                .catch(() => {toast.error('Error al acargar el carrito')})
-                .finally(() => { setLoading(false) })      
-        },1500)
-    },[tipo])
-    
-    
+  const [cargando, setLoading] = useState(true);
+  const [articulos, setProductos] = useState([]);
+  const tipo = useParams();
+  useEffect(() => {
+      if(!tipo.id){
+      const collectionItems = collection(db,"Items")
+      const documentos =getDocs(collectionItems)
+      documentos
+      .then(respuesta => setProductos(respuesta.docs.map(doc=>doc.data())))
+      .catch(error => toast.error("Error al obtener los productos"))
+      .finally(() => setLoading(false))
 
-    return (
-        <main>
-            {cargando ? <p>Aguarde un momento por favor estamos iniciando el carrito</p> : <ItemList items={items} tipo={tipo}/> }
-        </main>
-    );
-    }
-export default ItemListContainer
+  } else {
+      const collectionItems = collection(db, "Items")
+      const miFiltro = query(collectionItems,where("tipo","==",tipo.id))
+      const documentos = getDocs(miFiltro) 
+      documentos
+      .then(respuesta => setProductos(respuesta.docs.map(doc=>doc.data())))
+      .catch(error => toast.error("Error al obtener los productos"))
+      .finally(() => setLoading(false))
+  }
+  }, [tipo]);
+
+  return (
+    <main>
+      {cargando ? (
+        <p>Aguarde un momento por favor estamos iniciando el carrito</p>
+      ) : (
+        <ItemList items={articulos} tipo={tipo} />
+      )}
+    </main>
+  );
+}
+export default ItemListContainer;

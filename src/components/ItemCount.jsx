@@ -1,31 +1,30 @@
-import {useState} from "react"
+import { useState } from "react";
 
 function ItemCount(props) {
-    const [contador, setContador] = useState(props.inicial)
-    const agregarItem = ()=> {
-        if (contador<props.stock){
-        setContador(contador + 1)
-    }}
-    const sacarItem = ()=> {
-        if (contador>props.inicial){
-        setContador(contador - 1)
-    }}
-    const restaurar = ()=> {
-        setContador(props.inicial)
-        props.onAdd(contador)
-
+  const [contador, setContador] = useState(props.inicial);
+  const agregarItem = () => {
+    if (contador < props.stock) {
+      setContador(contador + 1);
     }
-    return (
-        <>
-            <div className="controArticulos">
-                <button  onClick={sacarItem}> -</button> 
-                <p> {contador}</p> 
-                <button onClick={agregarItem}> +</button> 
-            </div>
-            <button onClick={restaurar}> Agregar </button> 
-            
-        </>
-    )   
+  };
+  const sacarItem = () => {
+    if (contador > props.inicial) {
+      setContador(contador - 1);
+    }
+  };
+  const restaurar = () => {
+    setContador(props.inicial);
+    props.onAdd(contador);
+  };
+  return (
+    <>
+      <div className="controArticulos">
+        <button onClick={sacarItem}> -</button>
+        <p> {contador}</p>
+        <button onClick={agregarItem}> +</button>
+      </div>
+      <button onClick={restaurar}> Agregar </button>
+    </>
+  );
 }
-export default ItemCount
-        
+export default ItemCount;

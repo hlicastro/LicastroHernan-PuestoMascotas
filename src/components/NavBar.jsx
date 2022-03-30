@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidget from "./CartWidget";
-import { NavLink,Link  } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -12,11 +12,10 @@ const NavBar = () => {
             <NavLink to="/category/perro">Perros</NavLink>
             <NavLink to="/category/gato">Gatos</NavLink>
             <Link to="/carrito">Carrito</Link>
-
           </Nav>
           <Nav>
             <Link to="/carrito">
-              <CartWidget/>
+              <CartWidget />
             </Link>
           </Nav>
         </Navbar.Collapse>

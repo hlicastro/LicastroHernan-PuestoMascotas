@@ -1,72 +1,66 @@
-.elemento{
-    border: 1px solid black;
-    background-color: azure;
-    border-radius: 12px;
-    margin: 10px;
-    width: 300px;
+.elemento {
+  border: 1px solid black;
+  background-color: rgba(238, 238, 238, 0.5);
+  border-radius: 12px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  padding: 5px;
+  &__img {
+    height: 150px;
+  }
+}
+
+.linkNav a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  &.active {
+    color: grey;
+  }
+}
+
+.controArticulos {
+  display: flex;
+  width: 290px;
+  justify-content: space-evenly;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.baseCarrito {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.elementoDetalle {
+  border: solid 2px black;
+  margin: 1rem;
+  padding: 10px;
+  &__img {
+    height: 200px;
+  }
+}
+.carrito {
+  margin: 1rem;
+  padding: 1rem;
+  .total {
+    color: red;
     text-align: center;
-    padding: 5px;
-    &__img{
-        height: 150px;
-
-
-    }
-
+  }
 }
-.linkNav a{
+.carritoItem {
+  border: solid 2px black;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.carritoItem button {
+  background-color: white;
+  border: none;
+  color: red;
+}
+.elementoText{
     text-decoration: none;
-    color: white;
-    margin: 5px;
-    &.active{
-        color: grey;
-    }
+    color: black;
 }
-
-.controArticulos{
-    display: flex;
-    width: 290px;
-    justify-content:space-evenly;
-    margin-bottom: 5%;
-    margin-top: 5%;
-
-    
-}
-.baseCarrito{
-    display: flex;
-    justify-content:space-evenly;
-    flex-wrap: wrap;
-    
-
-}
-.elementoDetalle{
-    border:solid 2px black;
-    margin: 1rem;
-    padding: 10px;
-    &__img{
-        height: 200px;
-
-
-    }
-}
-.carrito{
-    margin: 1rem;
-    padding:1rem;
-    .total{
-        color:red;
-        text-align:center;
-
-    }
-}
-.carritoItem{
-    border:solid 2px black;
-    margin: 1rem;
-    display: flex;
-    justify-content:space-evenly;
-    align-items:center;
-    }
-.carritoItem button{
-    background-color:white;
-    border:none;
-    color: red
-    }
-
