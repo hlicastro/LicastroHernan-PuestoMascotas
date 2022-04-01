@@ -27,7 +27,7 @@ const Carrito = () => {
     const ordenesCollection = collection(db, "Pedidos")
     const pedido = addDoc(ordenesCollection,orden)
     .then(res=>{
-      toast("Su pedido se ha realizado con exito su numero de pedido es:" + res.id )
+      toast.success("Su pedido se ha realizado con exito su numero de pedido es: " + res.id )
   })
 
     clear()

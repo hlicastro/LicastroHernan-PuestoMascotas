@@ -1,4 +1,3 @@
-import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 function Item({ item }) {
   return (
@@ -12,5 +11,4 @@ function Item({ item }) {
     </div>
   );
 }
-
 export default Item;

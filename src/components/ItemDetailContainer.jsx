@@ -7,7 +7,7 @@ import { db } from "./Firebase"
 import { getDoc , collection , doc , where , query , getDocs } from "firebase/firestore"
 
 
-function ItemDetailContainer(props) {
+function ItemDetailContainer() {
   const [cargando, setLoading] = useState(true);
   const [itemdescripticion, setProducto] = useState([]);
   const { id } = useParams();
