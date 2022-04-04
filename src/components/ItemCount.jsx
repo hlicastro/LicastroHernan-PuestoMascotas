@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import {Button} from 'react-bootstrap'
 function ItemCount(props) {
   const [contador, setContador] = useState(props.inicial);
   const agregarItem = () => {
@@ -19,11 +19,11 @@ function ItemCount(props) {
   return (
     <>
       <div className="controArticulos">
-        <button onClick={sacarItem}> -</button>
+        <Button className="botonDefault" variant="primary" onClick={sacarItem}> -</Button>
         <p> {contador}</p>
-        <button onClick={agregarItem}> +</button>
+        <Button className="botonDefault" variant="primary" onClick={agregarItem}> +</Button>
       </div>
-      <button onClick={restaurar}> Agregar </button>
+      <Button className="botonDefault" variant="primary" onClick={restaurar}> Agregar</Button>
     </>
   );
 }

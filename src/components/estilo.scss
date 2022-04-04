@@ -7,7 +7,8 @@
   text-align: center;
   padding: 5px;
   &__img {
-    height: 150px;
+    width: 150px;
+
   }
 }
 
@@ -63,4 +64,30 @@
 .elementoText{
     text-decoration: none;
     color: black;
+}
+
+.marcaLink  {
+  text-decoration: none;
+font-size: 2vh;
+  color: white;
+  &:hover {
+    color: grey;
+  } 
+}
+.linkNav a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  &.active {
+    color: grey;
+  }
+  &:hover {
+    color: grey;
+  } 
+}
+
+.itemCard{
+  margin: 1rem;
+  &:hover{
+border: 1px solid black;  }
 }

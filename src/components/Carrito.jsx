@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { db } from "./Firebase";
 import { addDoc , collection , serverTimestamp } from "firebase/firestore"
 import { toast } from "react-toastify";
-
+import{Button} from 'react-bootstrap'
 
 const Carrito = () => {
   const resultado = useContext(contexto);
@@ -47,12 +47,12 @@ const Carrito = () => {
               Seleccionste {item.quantity} unidades x ${item.item.precio}{" "}
             </h4>
             <h4>Total : ${item.item.precio * item.quantity}</h4>
-            <button onClick={() => removeItem(item)}>X</button>
+            <Button variant="primary"onClick={() => removeItem(item)}>X</Button>
           </div>
         ))}
         <h3 className="total">Total $ {resultado.total} </h3>
-        <button onClick={clear}>Limpiar Carrito</button>
-        <button onClick={handleClick}>Confirmar Compra</button>
+        <Button className="botonDefault" variant="primary"onClick={clear}>Limpiar Carrito</Button>
+        <Button className="botonDefault" variant="primary"onClick={handleClick}>Confirmar Compra</Button>
 
       </div>
     );
@@ -61,7 +61,7 @@ const Carrito = () => {
       <>
         <h3> El carrito se encuentra vacio </h3>
         <Link to="/">
-          <button>Ir a comprar</button>
+        <Button className="botonDefault" variant="primary">Ir a comprar</Button>
         </Link>
       </>
     );

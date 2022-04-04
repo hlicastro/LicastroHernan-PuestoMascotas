@@ -14,3 +14,4 @@ El proyecto se basan en un E-comerse de productos para mascotas.
     "react-scripts": "5.0.0",
     "react-toastify": "^8.2.0", (se utiliza para los posibles errores y para mostrar el mensaje final de la compra)
     "web-vitals": "^2.1.4"
+    react-hook-form

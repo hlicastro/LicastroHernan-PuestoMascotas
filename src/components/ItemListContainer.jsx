@@ -10,23 +10,19 @@ function ItemListContainer(props) {
   const [articulos, setProductos] = useState([]);
   const tipo = useParams();
   useEffect(() => {
-      if(!tipo.id){
-      const collectionItems = collection(db,"Items")
-      const documentos =getDocs(collectionItems)
-      documentos
-      .then(respuesta => setProductos(respuesta.docs.map(doc=>doc.data())))
-      .catch(error => toast.error("Error al obtener los productos"))
-      .finally(() => setLoading(false))
-
-  } else {
-      const collectionItems = collection(db, "Items")
-      const miFiltro = query(collectionItems,where("tipo","==",tipo.id))
-      const documentos = getDocs(miFiltro) 
-      documentos
-      .then(respuesta => setProductos(respuesta.docs.map(doc=>doc.data())))
-      .catch(error => toast.error("Error al obtener los productos"))
-      .finally(() => setLoading(false))
-  }
+    const collectionItems = collection(db,"Items")
+    let documentos = null
+    if (!tipo.id) {
+      documentos =getDocs(collectionItems)
+    } else {
+      documentos = getDocs(query(collectionItems,where("tipo","==",tipo.id)))
+    }
+    
+  documentos
+  .then(respuesta => setProductos(respuesta.docs.map(doc=>doc.data())))
+  .catch(error => toast.error("Error al obtener los productos"))
+  .finally(() => setLoading(false))
+  
   }, [tipo]);
 
   return (

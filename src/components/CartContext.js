@@ -7,7 +7,7 @@ const CardProvider = ({ children }) => {
   const [contador, setCont] = useState(0);
 
   const removeItem = (producto) => {
-    setCarrito(carrito.filter((item) => item.item.id != producto.item.id));
+    setCarrito(carrito.filter((items) => items.item.id != producto.item.id));
     setTotal(total - producto.item.precio * producto.quantity);
     setCont(contador - producto.quantity);
   };

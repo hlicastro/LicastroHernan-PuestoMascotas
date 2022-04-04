@@ -1,9 +1,9 @@
 import ItemCount from "./ItemCount";
 import { useState, useContext } from "react";
-import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { Accordion } from "react-bootstrap";
 import { contexto } from "./CartContext";
+import { Button } from "react-bootstrap";
 
 function ItemDetail(props) {
   const resultado = useContext(contexto);
@@ -14,7 +14,6 @@ function ItemDetail(props) {
       setItemContador(unidadesContador);
     }
   };
-
   return (
     <div className="elementoDetalle">
       <h3>{props.item.marca}</h3>
@@ -35,10 +34,10 @@ function ItemDetail(props) {
               cantArticulos * props.item.precio}{" "}
           </h3>
           <Link to="/carrito">
-            <button onClick={() => addItem(props.item, cantArticulos)}>
+            <Button variant="primary" onClick={() => addItem(props.item, cantArticulos)}>
               {" "}
               Agregaral carrito{" "}
-            </button>{" "}
+            </Button>{" "}
           </Link>
         </>
       )}
