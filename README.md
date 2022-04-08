@@ -1,9 +1,12 @@
 # Proyecto React Coderhouse
+
 ### Datos
+
 Hugo hernan licastro
 El proyecto se basan en un E-comerse de productos para mascotas.
 
-## Librerias
+## Librerias utilizadas
+
     "firebase": "^9.6.10",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
@@ -14,4 +17,3 @@ El proyecto se basan en un E-comerse de productos para mascotas.
     "react-scripts": "5.0.0",
     "react-toastify": "^8.2.0", (se utiliza para los posibles errores y para mostrar el mensaje final de la compra)
     "web-vitals": "^2.1.4"
-    react-hook-form

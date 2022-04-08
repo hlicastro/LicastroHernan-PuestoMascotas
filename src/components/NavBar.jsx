@@ -5,7 +5,9 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Link className="marcaLink" to="/">Puesto Mascotas</Link>
+        <Link className="marcaLink" to="/">
+          Puesto Mascotas
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto linkNav">
@@ -13,7 +15,7 @@ const NavBar = () => {
             <NavLink to="/category/gato">Gatos</NavLink>
             <Link to="/carrito">Carrito</Link>
           </Nav>
-          <Nav>
+          <Nav className="linkNav">
             <Link to="/carrito">
               <CartWidget />
             </Link>

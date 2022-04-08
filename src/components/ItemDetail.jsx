@@ -34,11 +34,21 @@ function ItemDetail(props) {
               cantArticulos * props.item.precio}{" "}
           </h3>
           <Link to="/carrito">
-            <Button variant="primary" onClick={() => addItem(props.item, cantArticulos)}>
+            <Button
+              variant="success"
+              onClick={() => addItem(props.item, cantArticulos)}
+            >
               {" "}
               Agregaral carrito{" "}
             </Button>{" "}
           </Link>
+          <Link to="/">
+          <Button variant="secondary"
+              onClick={() => addItem(props.item, cantArticulos)}>Agregar y seguir comprando</Button>
+        </Link>
+        <Link to="/">
+          <Button variant="danger">Volver al carrito</Button>
+        </Link>
         </>
       )}
       <h5>

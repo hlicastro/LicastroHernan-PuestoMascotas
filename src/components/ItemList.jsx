@@ -4,7 +4,7 @@ function ItemList(props) {
   return (
     <div className="baseCarrito">
       {props.items.map((item) => {
-        return <Item item={item} key={"key"+item.id}/>;
+        return <Item item={item} key={"key" + item.id} />;
       })}
     </div>
   );

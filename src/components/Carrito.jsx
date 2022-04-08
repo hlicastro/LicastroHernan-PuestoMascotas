@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext , useState } from "react";
 import { contexto } from "./CartContext";
 import { Link } from "react-router-dom";
 import { db } from "./Firebase";
 import { addDoc , collection , serverTimestamp } from "firebase/firestore"
 import { toast } from "react-toastify";
-import{Button} from 'react-bootstrap'
+import FormCart from "./FormCart";
+import { Button, Col, Container ,Row} from "react-bootstrap";
+
 
 const Carrito = () => {
   const resultado = useContext(contexto);
@@ -12,14 +14,22 @@ const Carrito = () => {
   const removeItem = resultado.removeItem;
   const clear = resultado.clear;
   const contador = resultado.contador;
+  const [formData,setFormData]=useState({
+    name:'', 
+    surname:'',       
+    phone:'',
+    email:'',
+    email2:'',
+}) 
+function handleOnChange(e){
+  setFormData({
+      ...formData,
+      [e.target.name]: e.target.value               
+  })        
+}
   const handleClick = () => {
-        
     const orden = {
-        buyer : {
-            nombre : "Hernan",
-            telefono : "1155884455",
-            email : "hlicastro@gmail.com"
-        },
+        buyer : formData,
         items : carrito,
         date : serverTimestamp(),
         total : resultado.total
@@ -34,8 +44,13 @@ const Carrito = () => {
 }
   if (contador > 0) {
     return (
-      <div className="carrito">
+      <Container fluid >
+        <Row>
         <h2>Carrito</h2>
+
+        <Col xs={12} md={8}>                   
+      <div className="carrito">
+
         {carrito.map((item) => (
           <div className="carritoItem" key={item.item.id}>
             <img className="elemento__img" src={item.item.img} />
@@ -47,21 +62,26 @@ const Carrito = () => {
               Seleccionste {item.quantity} unidades x ${item.item.precio}{" "}
             </h4>
             <h4>Total : ${item.item.precio * item.quantity}</h4>
-            <Button variant="primary"onClick={() => removeItem(item)}>X</Button>
+            <Button onClick={() => removeItem(item)}>X</Button>
           </div>
         ))}
         <h3 className="total">Total $ {resultado.total} </h3>
-        <Button className="botonDefault" variant="primary"onClick={clear}>Limpiar Carrito</Button>
-        <Button className="botonDefault" variant="primary"onClick={handleClick}>Confirmar Compra</Button>
 
       </div>
+        </Col>  
+        <Col xs={6} md={4}>                   
+
+        <FormCart handleOnChange={handleOnChange} handleClick={handleClick} clear={clear} formData={formData}/>
+          </Col>
+          </Row>
+          </Container>
     );
   } else {
     return (
       <>
         <h3> El carrito se encuentra vacio </h3>
         <Link to="/">
-        <Button className="botonDefault" variant="primary">Ir a comprar</Button>
+          <Button>Ir a comprar</Button>
         </Link>
       </>
     );

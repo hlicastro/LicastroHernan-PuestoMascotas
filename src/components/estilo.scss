@@ -8,7 +8,6 @@
   padding: 5px;
   &__img {
     width: 150px;
-
   }
 }
 
@@ -57,22 +56,20 @@
   align-items: center;
 }
 .carritoItem button {
-  background-color: white;
-  border: none;
   color: red;
 }
-.elementoText{
-    text-decoration: none;
-    color: black;
+.elementoText {
+  text-decoration: none;
+  color: black;
 }
 
-.marcaLink  {
+.marcaLink {
   text-decoration: none;
-font-size: 2vh;
+  font-size: 2vh;
   color: white;
   &:hover {
     color: grey;
-  } 
+  }
 }
 .linkNav a {
   text-decoration: none;
@@ -83,11 +80,15 @@ font-size: 2vh;
   }
   &:hover {
     color: grey;
-  } 
+  }
 }
 
-.itemCard{
+.itemCard {
   margin: 1rem;
-  &:hover{
-border: 1px solid black;  }
+  &:hover {
+    border: 1px solid black;
+  }
+}
+.botonDefault {
+  margin-left: 1rem;
 }
