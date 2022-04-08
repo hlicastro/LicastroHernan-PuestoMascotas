@@ -14,9 +14,9 @@ const CardProvider = ({ children }) => {
   const addItem = (item, quantity) => {
     let copiaCarrito = carrito;
     if (isInCart(item.id)) {
-      copiaCarrito.map((carrito) => {
-        if (carrito.item.id == item.id) {
-          carrito.quantity = carrito.quantity + quantity;
+      copiaCarrito.map((carritoSup) => {
+        if (carritoSup.item.id == item.id) {
+          carritoSup.quantity = carritoSup.quantity + quantity;
           setTotal(total + item.precio * quantity);
           setCont(contador + quantity);
         }

@@ -16,56 +16,64 @@ function ItemDetail(props) {
   };
   return (
     <div className="elementoDetalle">
-      <h3>{props.item.marca}</h3>
-      <h4>{props.item.producto}</h4>
-      <img className="elementoDetalle__img" src={props.item.img} />
+      <div className="itemDetalleConteiner">
+        <h3>
+          {props.item.marca} - {props.item.producto}
+        </h3>
+        <img className="elementoDetalle__img" src={props.item.img} />
+      </div>
       {!cantArticulos ? (
-        <ItemCount
-          stock={props.item.stock}
-          inicial={props.item.inicial}
-          onAdd={onAdd}
-        />
+        <>
+          <ItemCount
+            stock={props.item.stock}
+            inicial={props.item.inicial}
+            onAdd={onAdd}
+          />
+          <h5>
+            Tenemos en Stock {props.item.stock} unidades, con un valor de ${" "}
+            {props.item.precio} cada una
+          </h5>
+          <Accordion>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Detalle</Accordion.Header>
+              <Accordion.Body>{props.item.detalle}</Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Composicion</Accordion.Header>
+              <Accordion.Body>{props.item.composicion}</Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </>
       ) : (
         <>
-          <h3>
+          <p>
             {"Estas por agregar al carrito: " +
               cantArticulos +
               " unidades con un total de $ " +
               cantArticulos * props.item.precio}{" "}
-          </h3>
+          </p>
           <Link to="/carrito">
             <Button
               variant="success"
               onClick={() => addItem(props.item, cantArticulos)}
             >
               {" "}
-              Agregaral carrito{" "}
+              Agregar al carrito{" "}
             </Button>{" "}
           </Link>
           <Link to="/">
-          <Button variant="secondary"
-              onClick={() => addItem(props.item, cantArticulos)}>Agregar y seguir comprando</Button>
-        </Link>
-        <Link to="/">
-          <Button variant="danger">Volver al carrito</Button>
-        </Link>
+            <Button
+              variant="secondary"
+              onClick={() => addItem(props.item, cantArticulos)}
+            >
+              Agregar y seguir comprando
+            </Button>
+          </Link>
+          <Link to="/">
+            <Button variant="danger">Volver al carrito</Button>
+          </Link>
         </>
       )}
-      <h5>
-        Tenemos en Stock {props.item.stock} unidades, con un valor de ${" "}
-        {props.item.precio} cada una
-      </h5>
-
-      <Accordion>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Detalle</Accordion.Header>
-          <Accordion.Body>{props.item.detalle}</Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Composicion</Accordion.Header>
-          <Accordion.Body>{props.item.composicion}</Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
     </div>
   );
 }

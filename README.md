@@ -1,11 +1,35 @@
-# Proyecto React Coderhouse
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e102278a-859c-42be-a46b-8ac51dc2992f/deploy-status)](https://app.netlify.com/sites/puestomascotas/deploys)
+
+### _Proyecto Ecommerce, Coderhouse React Camada 25470_
+
+[![logo-coderhouse-3-bllxal.png](https://i.postimg.cc/Y0Pp44Xr/logo-coderhouse-3-bllxal.png)](https://www.coderhouse.com/)
 
 ### Datos
 
-Hugo hernan licastro
+Hugo Hernan Licastro
 El proyecto se basan en un E-comerse de productos para mascotas.
 
-## Librerias utilizadas
+## Demo del sitio web
+
+https://puestomascotas.netlify.app/
+
+### Instalación
+
+- NodeJS por `npm` (_Versiones instaladas Git v2.31.1 y Node.js v15.14.0_)
+- Clonar repositorio con `git clone (https://github.com/hlicastro/LicastroHernan-PuestoMascotas.git)
+- Iniciar proyecto con `npm start`
+
+### Características
+
+- Se puede navegar entre categorías
+- Agregar productos al carrito de compras
+- Modificar cantidades de un producto antes de agregarlo al carrito de compras
+- Borrar un producto del carrito
+- Vaciar el carrito de compras
+- Completar un formulario para finalizar la compra
+- Mostrar un numero de orden por compra finalizada
+
+### Librerias utilizadas
 
     "firebase": "^9.6.10",
     "node-sass": "^7.0.1",

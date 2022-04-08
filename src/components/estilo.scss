@@ -20,13 +20,6 @@
   }
 }
 
-.controArticulos {
-  display: flex;
-  width: 290px;
-  justify-content: space-evenly;
-  margin-bottom: 5%;
-  margin-top: 5%;
-}
 .baseCarrito {
   display: flex;
   justify-content: space-evenly;
@@ -91,4 +84,11 @@
 }
 .botonDefault {
   margin-left: 1rem;
+}
+.itemDetalleConteiner {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 4px;
 }

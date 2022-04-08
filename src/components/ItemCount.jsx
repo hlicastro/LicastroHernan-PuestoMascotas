@@ -18,7 +18,7 @@ function ItemCount(props) {
   };
   return (
     <>
-      <div className="controArticulos">
+      <div className="itemDetalleConteiner">
         <Button className="botonDefault" variant="primary" onClick={sacarItem}>
           {" "}
           -
@@ -33,10 +33,16 @@ function ItemCount(props) {
           +
         </Button>
       </div>
-      <Button className="botonDefault" variant="primary" onClick={restaurar}>
-        {" "}
-        Agregar
-      </Button>
+      <div className="itemDetalleConteiner">
+        <Button
+          className="botonDefault itemDetalleConteinerBoton"
+          variant="primary"
+          onClick={restaurar}
+        >
+          {" "}
+          Agregar
+        </Button>
+      </div>
     </>
   );
 }
