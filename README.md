@@ -16,7 +16,6 @@ https://puestomascotas.netlify.app/
 
 ### Instalación
 
-- NodeJS por `npm` (_Versiones instaladas Git v2.31.1 y Node.js v15.14.0_)
 - Clonar repositorio con `git clone (https://github.com/hlicastro/LicastroHernan-PuestoMascotas.git)
 - Iniciar proyecto con `npm start`
 
