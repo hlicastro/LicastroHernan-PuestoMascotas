@@ -24,7 +24,7 @@ function ItemListContainer(props) {
       .then((respuesta) =>
         setProductos(respuesta.docs.map((doc) => doc.data()))
       )
-      .catch((error) => toast.error("Error al obtener los productos"))
+      .catch(() => toast.error("Error al obtener los productos"))
       .finally(() => setLoading(false));
   }, [tipo]);
 

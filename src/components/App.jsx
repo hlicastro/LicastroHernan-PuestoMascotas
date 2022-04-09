@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./estilo.scss";
 import CardProvider from "./CartContext";
+
 function App() {
   return (
     <CardProvider>

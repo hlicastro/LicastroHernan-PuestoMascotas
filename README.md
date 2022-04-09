@@ -1,5 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e102278a-859c-42be-a46b-8ac51dc2992f/deploy-status)](https://app.netlify.com/sites/puestomascotas/deploys)
 
+
 ### _Proyecto Ecommerce, Coderhouse React Camada 25470_
 
 [![logo-coderhouse-3-bllxal.png](https://i.postimg.cc/Y0Pp44Xr/logo-coderhouse-3-bllxal.png)](https://www.coderhouse.com/)
@@ -7,7 +8,7 @@
 ### Datos
 
 Hugo Hernan Licastro
-El proyecto se basan en un E-comerse de productos para mascotas.
+El proyecto se basa en un E-comerse de productos para mascotas.
 
 ## Demo del sitio web
 
@@ -40,4 +41,5 @@ https://puestomascotas.netlify.app/
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-toastify": "^8.2.0", (se utiliza para los posibles errores y para mostrar el mensaje final de la compra)
+    "validator": "^13.7.0", (se utiliza para validad el formulario de final de compra)
     "web-vitals": "^2.1.4"

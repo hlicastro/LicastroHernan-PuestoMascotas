@@ -17,7 +17,7 @@ function ItemDetailContainer() {
       .then((respuesta) =>
         setProducto(respuesta.docs.map((doc) => doc.data())[0])
       )
-      .catch((error) => toast.error("Error al obtener los productos"))
+      .catch(() => toast.error("Error al obtener los productos"))
       .finally(() => setLoading(false));
   }, [id]);
 

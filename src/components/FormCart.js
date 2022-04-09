@@ -1,6 +1,12 @@
 import { Button, Container } from "react-bootstrap";
+import validator from "validator";
 
 function FormCart({ formData, clear, handleClick, handleOnChange }) {
+  const valido =
+    validator.isEmail(formData.email) &&
+    validator.isAlpha(formData.name) &&
+    validator.isAlpha(formData.surname) &&
+    validator.isNumeric(formData.phone);
   return (
     <Container>
       <h5>Por favor completa tus datos para continuar la compra</h5>
@@ -41,13 +47,21 @@ function FormCart({ formData, clear, handleClick, handleOnChange }) {
           required
           style={{ width: "90%" }}
         />
-        <Button
-          onClick={handleClick}
-          className="btn-primary mt-3"
-          style={{ width: "90%" }}
-        >
-          Finalizar Compra
-        </Button>
+        {valido ? (
+          <>
+            <Button
+              onClick={handleClick}
+              className="btn-primary mt-3"
+              style={{ width: "90%" }}
+            >
+              Finalizar Compra
+            </Button>
+          </>
+        ) : (
+          <Button className="btn-d mt-3" style={{ width: "90%" }} disabled>
+            Ingrese datos validos para continuar
+          </Button>
+        )}
         <Button
           onClick={clear}
           className="btn-danger mt-3"
